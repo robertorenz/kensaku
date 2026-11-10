@@ -109,3 +109,6 @@ scratch/
 src-tauri/onnxruntime.dll
 src-tauri/libonnxruntime.dylib
 src-tauri/libonnxruntime.so
+
+# Local graft code index
+graft/
