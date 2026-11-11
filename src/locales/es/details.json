@@ -1,0 +1,23 @@
+{
+  "title": "Detalles",
+  "location": "Ubicación",
+  "size": "Tamaño",
+  "modified": "Modificado",
+  "matchedBy": "Coincidencia por",
+  "score": "Puntuación",
+  "done": "Listo",
+  "match": {
+    "fileName": "nombre de archivo",
+    "content": "contenido del archivo",
+    "contentFolded": "contenido (aproximado)",
+    "semantic": "significado",
+    "both": "nombre y contenido"
+  },
+  "preview": {
+    "title": "Vista previa",
+    "open": "Abrir",
+    "loading": "Cargando vista previa…",
+    "unavailable": "No hay vista previa para este tipo de archivo",
+    "close": "Cerrar"
+  }
+}

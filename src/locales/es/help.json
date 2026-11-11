@@ -1,0 +1,36 @@
+{
+  "title": "Cómo buscar",
+  "keyboard": "Teclado",
+  "filters": "Filtros",
+  "keys": {
+    "showHide": "mostrar u ocultar la ventana (modo lanzador)",
+    "moveResults": "entrar y moverse por los resultados",
+    "moveRow": "moverse dentro de una fila, una vez en los resultados",
+    "previewResults": "vista previa, una vez en los resultados",
+    "previewAnywhere": "vista previa, desde cualquier lugar",
+    "openFile": "abrir el archivo seleccionado",
+    "showFolder": "mostrar en carpeta",
+    "copyPath": "copiar la ruta seleccionada (salvo que haya texto seleccionado)",
+    "selectMany": "seleccionar varios resultados y luego clic derecho para copiarlos o moverlos",
+    "details": "detalles del archivo seleccionado",
+    "settings": "configuración",
+    "thisSheet": "esta hoja",
+    "escape": "cerrar el diálogo, borrar la búsqueda y luego ocultar (modo lanzador)",
+    "toggleView": "Alternar vista de cuadrícula / lista"
+  },
+  "filterDescriptions": {
+    "type": "categoría o extensión",
+    "ext": "extensión exacta",
+    "in": "limitar a una carpeta",
+    "path": "coincidencia parcial en la ruta",
+    "modified": "modificado en los últimos 7 días (1h, 30d, 7d..30d)",
+    "size": "rango de tamaño (kb, mb, gb)",
+    "aliases": "alias de categoría",
+    "lang": "familia de lenguaje de la extensión",
+    "name": "buscar solo en el nombre",
+    "content": "buscar solo en el contenido",
+    "regex": "expresión regular",
+    "time": "filtro de viaje en el tiempo",
+    "near": "términos a menos de 5 palabras"
+  }
+}

@@ -10,6 +10,9 @@ versioning: [SemVer](https://semver.org/).
   shows the index size in megabytes (search index plus metadata database,
   with the split underneath) and the index folder path, with Copy path and
   Open folder buttons. Backed by a new `get_index_info` command.
+- **Spanish interface (Español).** Full translation of every screen; picked
+  automatically when the system language is Spanish, or chosen in
+  Settings → General → Language.
 
 ### Fixed
 - **Searching no longer downloads cloud-only files.** Result snippets, the

@@ -1,0 +1,23 @@
+{
+  "hover": {
+    "folder": "Carpeta"
+  },
+  "loadingMore": "Cargando más",
+  "duplicates": {
+    "title": "Duplicados",
+    "subtitle": "Coincidencias de contenido exacto e imágenes casi idénticas. Solo revisión: elimina en tu explorador de archivos.",
+    "close": "Cerrar",
+    "finding": "Buscando duplicados…",
+    "none": "No se encontraron duplicados.",
+    "noneHint": "Aquí aparecerán los duplicados de contenido exacto, ráfagas de capturas e imágenes perceptualmente similares.",
+    "kindBurst": "ráfaga de capturas",
+    "kindExact": "contenido exacto",
+    "kindPerceptual": "imagen similar",
+    "files": "{{count}} archivos",
+    "openFile": "Abrir archivo",
+    "copyPath": "Copiar ruta",
+    "reveal": "Mostrar en carpeta",
+    "copied": "copiado",
+    "loadFailed": "No se pudieron buscar duplicados: {{error}}"
+  }
+}

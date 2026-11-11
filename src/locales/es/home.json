@@ -1,0 +1,14 @@
+{
+  "opened": "Abierto {{time}}",
+  "saved": "Guardadas",
+  "recent": "Recientes",
+  "recentSearches": "Búsquedas recientes",
+  "clearRecentSearches": "Borrar",
+  "emptyHint": "Pide un archivo como se lo describirías a un amigo.",
+  "suggestions": {
+    "resume": "último currículum",
+    "screenshots": "capturas de pantalla de la semana pasada",
+    "videos": "vídeos grandes",
+    "invoice": "factura"
+  }
+}

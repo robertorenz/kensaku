@@ -1,0 +1,165 @@
+{
+  "placeholder": "Busca archivos, contenido, significado…",
+  "command": "Comando",
+  "clearInput": "Borrar (Esc)",
+  "placeholderEmpty": "Escribe para buscar",
+  "placeholders": {
+    "everything": "Buscar en todo",
+    "invoice": "factura de la semana pasada",
+    "pdf": "type:pdf in:~/Projects",
+    "chart": "capturas con un gráfico"
+  },
+  "resultCount": "{{count}} resultados",
+  "resultCount_one": "{{count}} resultado",
+  "resultCount_other": "{{count}} resultados",
+  "modes": {
+    "ranked": "Por relevancia",
+    "exhaustive": "Exhaustiva"
+  },
+  "sort": {
+    "best": "Mejor coincidencia",
+    "newest": "Más recientes",
+    "oldest": "Más antiguos",
+    "largest": "Más grandes",
+    "name": "Nombre",
+    "label": "Ordenar resultados"
+  },
+  "view": {
+    "grid": "Vista de cuadrícula",
+    "list": "Vista de lista",
+    "layout": "Diseño",
+    "gridShort": "Cuadrícula",
+    "listShort": "Lista"
+  },
+  "saveSearch": "Guardar esta búsqueda",
+  "saveName": "Nombre de la búsqueda",
+  "understoodAs": "Interpretado como",
+  "removeInterpretation": "Quitar «{{source}}»",
+  "removeFilter": "Quitar filtro {{filter}}",
+  "removeFilters": "Quitar filtros",
+  "tryPdf": "Prueba type:pdf",
+  "onlyFolders": "Solo carpetas",
+  "noResultsNothing": "Todavía no hay nada llamado {{query}}.",
+  "settingsTitle": "Configuración",
+  "toast": {
+    "pathCopied": "Ruta copiada",
+    "copied": "{{count}} archivos copiados",
+    "moved": "{{count}} archivos movidos",
+    "transferPartial": "{{done}} hechos, {{skipped}} omitidos, {{failed}} con error"
+  },
+  "filters": {
+    "type": "Tipo",
+    "ext": "Extensión",
+    "in": "En carpeta",
+    "modified": "Modificado",
+    "size": "Tamaño",
+    "clear": "Borrar filtros",
+    "addFilter": "Añadir filtro"
+  },
+  "slashMenu": {
+    "search": "Buscar",
+    "filter": "Filtrar",
+    "help": "Ayuda",
+    "settings": "Configuración",
+    "reindex": "Reindexar",
+    "recent": "Consultas recientes"
+  },
+  "slash": {
+    "images": "Capturas y fotos",
+    "pdf": "Documentos PDF",
+    "docs": "Documentos y notas",
+    "code": "Código fuente y archivos de configuración",
+    "media": "Audio y vídeo",
+    "recent": "Modificado la última semana",
+    "errors": "Buscar texto de errores",
+    "diagrams": "Buscar diagramas",
+    "dupes": "Buscar archivos e imágenes duplicados",
+    "reindex": "Volver a escanear las carpetas vigiladas",
+    "doctor": "Informe de estado del índice",
+    "settings": "Abrir Configuración"
+  },
+  "contextMenu": {
+    "open": "Abrir",
+    "reveal": "Mostrar en carpeta",
+    "copyPath": "Copiar ruta",
+    "copyName": "Copiar nombre",
+    "details": "Detalles",
+    "preview": "Vista previa",
+    "quickLook": "Vista rápida",
+    "copyTo": "Copiar {{count}} archivos a…",
+    "moveTo": "Mover {{count}} archivos a…",
+    "clearSelection": "Borrar selección"
+  },
+  "empty": {
+    "noResults": "Sin resultados",
+    "noResultsHint": "Prueba otra consulta o amplía los filtros.",
+    "noIndex": "Aún no hay índice",
+    "noIndexHint": "Elige carpetas en la configuración inicial para empezar a indexar."
+  },
+  "chips": {
+    "remove": "Quitar",
+    "excluded": "Excluido. Haz clic para quitar",
+    "includeHint": "Clic para incluir, Alt+clic para excluir"
+  },
+  "categories": {
+    "all": "Todo",
+    "file": "Archivos",
+    "folder": "Carpetas",
+    "image": "Imágenes",
+    "doc": "Documentos",
+    "code": "Código",
+    "media": "Multimedia",
+    "archive": "Comprimidos",
+    "recent": "Recientes"
+  },
+  "interpretation": {
+    "sort": {
+      "newest": "Orden: más recientes",
+      "oldest": "Orden: más antiguos",
+      "largest": "Orden: más grandes"
+    },
+    "time": {
+      "today": "Modificado: hoy",
+      "yesterday": "Modificado: ayer",
+      "last7Days": "Modificado: últimos 7 días",
+      "last30Days": "Modificado: últimos 30 días",
+      "lastYear": "Modificado: el año pasado",
+      "lastWeekday": "Modificado: el {{weekday}} pasado",
+      "daysAgo": "Modificado: hace {{count}} días"
+    },
+    "weekday": {
+      "monday": "lunes",
+      "tuesday": "martes",
+      "wednesday": "miércoles",
+      "thursday": "jueves",
+      "friday": "viernes",
+      "saturday": "sábado",
+      "sunday": "domingo"
+    },
+    "sizeUnder": "Tamaño: menos de {{value}}",
+    "sizeOver": "Tamaño: más de {{value}}",
+    "visual": "Visual: imágenes",
+    "type": {
+      "images": "Tipo: imágenes",
+      "pdf": "Tipo: PDF",
+      "media": "Tipo: multimedia",
+      "code": "Tipo: código",
+      "documents": "Tipo: documentos",
+      "folders": "Tipo: carpetas",
+      "archives": "Tipo: comprimidos",
+      "logs": "Tipo: registros"
+    },
+    "in": "En: {{place}}",
+    "place": {
+      "projects": "En: Proyectos",
+      "downloads": "En: Descargas",
+      "documents": "En: Documentos",
+      "desktop": "En: Escritorio",
+      "pictures": "En: Imágenes",
+      "videos": "En: Vídeos",
+      "music": "En: Música",
+      "work": "En: Trabajo"
+    },
+    "alias": "Alias: {{term}}"
+  }
+}

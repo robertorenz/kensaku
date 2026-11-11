@@ -1,0 +1,65 @@
+{
+  "app": { "name": "Kensaku" },
+  "actions": {
+    "close": "Cerrar",
+    "cancel": "Cancelar",
+    "save": "Guardar",
+    "copy": "Copiar",
+    "open": "Abrir",
+    "reveal": "Mostrar en carpeta",
+    "details": "Detalles",
+    "preview": "Vista previa",
+    "search": "Buscar",
+    "retry": "Reintentar",
+    "reset": "Restablecer"
+  },
+  "units": {
+    "folder": "Carpeta",
+    "files": "archivos",
+    "folders": "carpetas",
+    "results": "resultados",
+    "result_one": "resultado",
+    "result_other": "resultados"
+  },
+  "time": {
+    "justNow": "ahora mismo",
+    "minutesAgo": "hace {{count}} min",
+    "hoursAgo": "hace {{count}} h",
+    "daysAgo": "hace {{count}} d",
+    "monthsAgo": "hace {{count}} mes.",
+    "yearsAgo": "hace {{count}} a",
+    "duration": {
+      "zero": "0 s",
+      "seconds": "{{count}} s",
+      "minutesSeconds": "{{minutes}} min {{seconds}} s",
+      "hours": "{{hours}} h {{minutes}} min"
+    }
+  },
+  "status": {
+    "loading": "Cargando…",
+    "indexing": "Indexando…",
+    "verifying": "Verificando archivos…",
+    "ready": "Listo",
+    "paused": "Indexación en pausa",
+    "rebuilding": "Reconstruyendo el índice…",
+    "indexingProgress": "Indexando {{done}} de {{total}}",
+    "indexingFiles": "Indexando {{count}} archivos",
+    "embedding": "{{count}} archivos · creando índice semántico",
+    "filesCount": "{{count}} archivos"
+  },
+  "health": {
+    "issue_one": "{{count}} problema de estado — abrir Estado",
+    "issue_other": "{{count}} problemas de estado — abrir Estado",
+    "issuesShort_one": "{{count}} problema",
+    "issuesShort_other": "{{count}} problemas",
+    "ok": "Estado del índice correcto"
+  },
+  "update": {
+    "available": "Actualización disponible: {{version}}",
+    "label": "Actualizar"
+  },
+  "stepper": {
+    "decrease": "Disminuir",
+    "increase": "Aumentar"
+  }
+}

@@ -32,10 +32,21 @@ import ruSettings from "../locales/ru/settings.json";
 import ruSetup from "../locales/ru/setup.json";
 import ruErrors from "../locales/ru/errors.json";
 
+import esCommon from "../locales/es/common.json";
+import esSearch from "../locales/es/search.json";
+import esHome from "../locales/es/home.json";
+import esResults from "../locales/es/results.json";
+import esDetails from "../locales/es/details.json";
+import esHelp from "../locales/es/help.json";
+import esSettings from "../locales/es/settings.json";
+import esSetup from "../locales/es/setup.json";
+import esErrors from "../locales/es/errors.json";
+
 export const SUPPORTED_LANGUAGES = {
   en: "English",
   zh: "中文",
   ru: "Русский",
+  es: "Español",
 } as const;
 
 export type SupportedLanguage = keyof typeof SUPPORTED_LANGUAGES;
@@ -73,6 +84,17 @@ const resources = {
     settings: ruSettings,
     setup: ruSetup,
     errors: ruErrors,
+  },
+  es: {
+    common: esCommon,
+    search: esSearch,
+    home: esHome,
+    results: esResults,
+    details: esDetails,
+    help: esHelp,
+    settings: esSettings,
+    setup: esSetup,
+    errors: esErrors,
   },
 };
 

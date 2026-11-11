@@ -1,0 +1,99 @@
+{
+  "minimize": "Minimizar",
+  "theme": "Tema",
+  "readyMark": "Listo",
+  "indexingMark": "Indexando",
+  "brand": {
+    "found": "encontrado.",
+    "search": "para buscar."
+  },
+  "done": {
+    "title": "Ya puedes buscar.",
+    "pressShortcut": "Pulsa <kbd>{{shortcut}}</kbd> en cualquier lugar para abrir Kensaku.",
+    "openFromTaskbar": "Encuentra Kensaku en la barra de tareas o en el Dock cuando quieras.",
+    "closingNote": "Esc o un clic fuera oculta la ventana: Kensaku sigue funcionando en la bandeja.",
+    "quitNote": "Cerrar la ventana cierra Kensaku. El índice se guarda y el próximo inicio es instantáneo.",
+    "files": "Archivos",
+    "readInside": "Contenido leído",
+    "start": "Empezar a buscar"
+  },
+  "scan": {
+    "phases": {
+      "verifying": "Verificando archivos",
+      "walking": "Buscando archivos",
+      "extracting": "Leyendo el interior de los documentos",
+      "embedding": "Aprendiendo el significado",
+      "committing": "Guardando el índice",
+      "paused": "En pausa",
+      "idle": "Terminando",
+      "starting": "Iniciando"
+    },
+    "ofFiles": "de {{total}} archivos",
+    "filesSoFar": "archivos hasta ahora",
+    "finishing": "Terminando",
+    "estimating": "Calculando",
+    "onlyFirstTime": "Solo la primera vez. Después, cada inicio es instantáneo.",
+    "eta": {
+      "seconds": "Quedan ~{{seconds}} s",
+      "minutes": "Quedan ~{{minutes}} min {{seconds}} s",
+      "hours": "Quedan ~{{hours}} h {{minutes}} min"
+    },
+    "modelFailedTitle": "La búsqueda semántica no está lista",
+    "modelFailedBody": "No se descargaron los archivos del modelo. La búsqueda por palabras clave funciona sin ellos.",
+    "modelRetry": "Reintentar descarga",
+    "modelRetrying": "Reintentando…"
+  },
+  "folders": {
+    "title": "¿Dónde están tus archivos?",
+    "lead": "Elige las carpetas en las que buscar. Puedes cambiarlo más tarde.",
+    "browse": "Buscar carpeta…",
+    "browseTitle": "Elige las carpetas en las que buscar",
+    "pickMany": "elige todas las que quieras",
+    "pathPlaceholder": "O escribe una ruta: ~ funciona, separa varias con comas",
+    "addFolder": "Añadir carpeta",
+    "pickerUnavailable": "El selector de carpetas no está disponible aquí: escribe una ruta abajo. ({{error}})"
+  },
+  "ocr": {
+    "title": "Lee el texto de tus imágenes",
+    "lead": "Las capturas, escaneos y fotos se vuelven buscables. Elige un motor.",
+    "tesseractNote": "Texto ASCII rápido y limpio; no requiere descarga. Motor de respaldo.",
+    "ppocrNote": "Recomendado. ~6 MB, la mejor cobertura en capturas de interfaz densas y el procesamiento por lotes más rápido.",
+    "indraNote": "~27 MB, más de 80 idiomas, escaneos girados o inclinados; cobertura similar, algo más lento.",
+    "notInstalled": "No instalado",
+    "notInBuild": "No incluido en esta versión",
+    "downloadFailed": "Error en la descarga: {{error}}",
+    "verifying": "Verificando {{file}}…",
+    "downloadingPercent": "Descargando {{percent}} %",
+    "ready": "Listo",
+    "downloading": "Descargando",
+    "download": "Descargar"
+  },
+  "mode": {
+    "title": "¿Cómo debe abrirse Kensaku?",
+    "lead": "Puedes cambiarlo cuando quieras en Configuración.",
+    "aria": "Modo de ventana",
+    "app": "Ventana",
+    "launcher": "Lanzador",
+    "default": "Predeterminado",
+    "appCard": "Ventana normal en la barra de tareas. Cerrarla cierra Kensaku.",
+    "launcherCard": "Pulsa un atajo para abrirlo. Esc o un clic fuera para ocultarlo. Vive en la bandeja.",
+    "appNote": "Cerrar la ventana cierra Kensaku.",
+    "launcherNote": "Cerrarla la oculta: Kensaku sigue en la bandeja.",
+    "escHides": "Atajo para abrir",
+    "pressShortcut": "Pulsa un nuevo atajo…",
+    "change": "Cambiar",
+    "escCancel": "Esc para cancelar",
+    "wayland": "En Wayland, asigna kensaku --toggle como atajo del sistema si la tecla no se registra.",
+    "closingLauncher": "Esc o un clic fuera para ocultarlo. Vuelve a encontrarlo en la bandeja o con tu atajo."
+  },
+  "footer": {
+    "folders_one": "{{count}} carpeta",
+    "folders_other": "{{count}} carpetas",
+    "staysLocal": "Todo se queda en este equipo.",
+    "downloadToContinue": "Descarga {{engine}} para continuar.",
+    "back": "Atrás",
+    "continue": "Continuar",
+    "startIndexing": "Empezar a indexar"
+  },
+  "setupFailed": "Error en la configuración inicial: {{error}}"
+}
