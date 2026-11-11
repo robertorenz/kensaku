@@ -176,6 +176,18 @@ bun run tauri build
 
 You need Rust (stable), Bun 1.1 or later, and your platform's webview libraries. See [docs/INSTALL.md](docs/INSTALL.md). A `Makefile` covers the common tasks: `make dev`, `make build`, `make test`, and `make reset`.
 
+#### Portable Windows exe
+
+To get a single, installer-free `kensaku.exe` (frontend embedded, static C runtime, UPX-compressed) in a local `run\` folder:
+
+```powershell
+$env:RUSTFLAGS = '-C target-feature=+crt-static'
+bun run tauri build --no-bundle
+upx --best --lzma -o run\kensaku.exe src-tauri\target\release\kensaku.exe
+```
+
+It needs only the WebView2 runtime, which ships with Windows 10/11. Accurate OCR still needs `onnxruntime.dll` next to the exe; without it Kensaku falls back to Tesseract. `run\` is git-ignored.
+
 ## Connect AI agents (MCP)
 
 Point an MCP client at the CLI:

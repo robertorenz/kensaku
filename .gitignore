@@ -112,3 +112,6 @@ src-tauri/libonnxruntime.so
 
 # Local graft code index
 graft/
+
+# Local self-contained, UPX-compressed exe (see README)
+run/
