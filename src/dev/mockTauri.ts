@@ -148,6 +148,12 @@ const handlers: Record<string, (a: any) => unknown> = {
   find_duplicates: () => [],
   run_doctor: () => ({ checks: [], summary: { ok: 0, warn: 0, fail: 0 } }),
   get_stats: () => ({ files: 48213, index_bytes: 212_000_000, memory_bytes: 38_000_000 }),
+  get_index_info: () => ({
+    index_dir: "C:\\Users\\you\\AppData\\Roaming\\kensaku\\index",
+    data_dir: "C:\\Users\\you\\AppData\\Roaming\\kensaku",
+    index_bytes: 184_500_000,
+    metadata_bytes: 27_500_000,
+  }),
   agent_connect_status: () => [],
   "plugin:event|listen": () => 1,
   "plugin:event|unlisten": () => null,

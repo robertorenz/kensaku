@@ -9,6 +9,7 @@ import {
   Check,
   Copy,
   Filter,
+  FolderOpen,
   FolderTree,
   Info,
   Plus,
@@ -1551,6 +1552,19 @@ function ResetDialog({ onClose }: { onClose: () => void }) {
   );
 }
 
+interface IndexInfo {
+  index_dir: string;
+  data_dir: string;
+  index_bytes: number;
+  metadata_bytes: number;
+}
+
+/* Always megabytes, so the About screen reads the same at any index size. */
+function formatMegabytes(bytes: number): string {
+  const mb = bytes / (1024 * 1024);
+  return `${mb.toLocaleString(undefined, { minimumFractionDigits: 1, maximumFractionDigits: 1 })} MB`;
+}
+
 function AboutSection({
   config,
   setConfig,
@@ -1567,6 +1581,35 @@ function AboutSection({
   const [updateStatus, setUpdateStatus] = useState<UpdateStatus | null>(null);
   const [downloading, setDownloading] = useState(false);
   const [updaterError, setUpdaterError] = useState<string | null>(null);
+  const [indexInfo, setIndexInfo] = useState<IndexInfo | null>(null);
+  const [indexInfoFailed, setIndexInfoFailed] = useState(false);
+  const [pathCopied, setPathCopied] = useState(false);
+
+  useEffect(() => {
+    let cancelled = false;
+    invoke<IndexInfo>("get_index_info")
+      .then((info) => {
+        if (!cancelled) setIndexInfo(info);
+      })
+      .catch((err) => {
+        console.warn("get_index_info failed:", err);
+        if (!cancelled) setIndexInfoFailed(true);
+      });
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  const copyIndexPath = async () => {
+    if (!indexInfo) return;
+    try {
+      await navigator.clipboard.writeText(indexInfo.index_dir);
+      setPathCopied(true);
+      window.setTimeout(() => setPathCopied(false), 1500);
+    } catch (err) {
+      console.warn("Copy failed:", err);
+    }
+  };
 
   useEffect(() => {
     let cancelled = false;
@@ -1712,6 +1755,75 @@ function AboutSection({
             <span>{t("about.opensRelease")}</span>
             <ExternalLink className="h-3 w-3" />
           </button>
+        </div>
+      </Card>
+
+      <Card title={t("about.indexInfo.title")}>
+        <Field
+          label={t("about.indexInfo.size")}
+          description={
+            indexInfo
+              ? t("about.indexInfo.sizeBreakdown", {
+                  index: formatMegabytes(indexInfo.index_bytes),
+                  metadata: formatMegabytes(indexInfo.metadata_bytes),
+                })
+              : indexInfoFailed
+                ? t("about.indexInfo.unavailable")
+                : t("about.indexInfo.measuring")
+          }
+        >
+          <span className="font-mono text-[13px] font-semibold text-fg">
+            {indexInfo
+              ? formatMegabytes(indexInfo.index_bytes + indexInfo.metadata_bytes)
+              : "—"}
+          </span>
+        </Field>
+        <div className="border-t border-line px-4 py-3">
+          <p className="text-[13px] font-medium text-fg">{t("about.indexInfo.location")}</p>
+          <p className="pt-0.5 text-[12px] leading-[18px] text-muted">
+            {t("about.indexInfo.locationDescription")}
+          </p>
+          <div className="mt-2 flex items-center gap-2">
+            <code
+              className="min-w-0 flex-1 select-text break-all rounded-control border border-line bg-surface-2 px-2.5 py-1.5 font-mono text-[11px] text-fg"
+              title={indexInfo?.index_dir}
+            >
+              {indexInfo?.index_dir ?? "—"}
+            </code>
+            <button
+              type="button"
+              onClick={copyIndexPath}
+              disabled={!indexInfo}
+              title={t("about.indexInfo.copyPath")}
+              aria-label={t("about.indexInfo.copyPath")}
+              className="btn btn-secondary h-8 w-8 shrink-0 !rounded-control !px-0"
+            >
+              {pathCopied ? (
+                <Check className="h-3.5 w-3.5 text-success" />
+              ) : (
+                <Copy className="h-3.5 w-3.5 text-muted" />
+              )}
+            </button>
+            <button
+              type="button"
+              onClick={() =>
+                indexInfo &&
+                invoke("open_folder", { path: indexInfo.index_dir }).catch((err) =>
+                  console.warn("open_folder failed:", err),
+                )
+              }
+              disabled={!indexInfo}
+              className="btn btn-secondary h-8 shrink-0 !rounded-control"
+            >
+              <FolderOpen className="mr-1.5 h-3.5 w-3.5 text-muted" />
+              {t("about.indexInfo.openFolder")}
+            </button>
+          </div>
+          {pathCopied && (
+            <p className="pt-1 text-[11px] text-subtle" role="status">
+              {t("about.indexInfo.copied")}
+            </p>
+          )}
         </div>
       </Card>
 

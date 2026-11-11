@@ -214,6 +214,18 @@
     "checkUpdates": "Check for updates",
     "opening": "Opening…",
     "opensRelease": "Opens the latest release page in your browser.",
+    "indexInfo": {
+      "title": "Index on disk",
+      "size": "Index size",
+      "sizeBreakdown": "Search index {{index}} · metadata {{metadata}}",
+      "location": "Location",
+      "locationDescription": "Folder that holds the search index. The metadata database sits next to it.",
+      "openFolder": "Open folder",
+      "copyPath": "Copy path",
+      "copied": "Copied",
+      "measuring": "Measuring…",
+      "unavailable": "Could not read the index size."
+    },
     "howTo": "How to use Kensaku",
     "howToIntro": "A few simple tricks make search feel instant:",
     "tipLabels": {

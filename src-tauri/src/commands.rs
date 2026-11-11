@@ -836,6 +836,34 @@ pub async fn download_ocr_language() -> Result<OcrStatus, String> {
     .map_err(|e| format!("OCR download task failed: {}", e))?
 }
 
+/// Where the search index lives and how much disk it uses, for the About
+/// screen. `index_bytes` is the full-text index directory; `metadata_bytes`
+/// is the SQLite metadata database (with its WAL/SHM side files) beside it.
+#[derive(Debug, Serialize)]
+pub struct IndexInfo {
+    pub index_dir: String,
+    pub data_dir: String,
+    pub index_bytes: u64,
+    pub metadata_bytes: u64,
+}
+
+#[tauri::command]
+pub async fn get_index_info() -> Result<IndexInfo, String> {
+    // Walking the index directory touches every segment file; keep it off
+    // the async runtime's worker threads.
+    tauri::async_runtime::spawn_blocking(|| {
+        let inv = crate::maintenance::inventory();
+        IndexInfo {
+            index_dir: KensakuConfig::index_dir().display().to_string(),
+            data_dir: inv.config_dir,
+            index_bytes: inv.index_bytes,
+            metadata_bytes: inv.metadata_bytes,
+        }
+    })
+    .await
+    .map_err(|e| format!("Could not measure the index: {e}"))
+}
+
 /// Reports the optional accurate OCR pack inventory.
 #[tauri::command]
 pub async fn get_ocr_pack_status() -> Result<crate::models::ModelsStatus, String> {

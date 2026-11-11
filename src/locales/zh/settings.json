@@ -214,6 +214,18 @@
     "checkUpdates": "检查更新",
     "opening": "正在打开…",
     "opensRelease": "在浏览器中打开最新版本页面。",
+    "indexInfo": {
+      "title": "磁盘上的索引",
+      "size": "索引大小",
+      "sizeBreakdown": "搜索索引 {{index}} · 元数据 {{metadata}}",
+      "location": "位置",
+      "locationDescription": "存放搜索索引的文件夹。元数据库位于其旁边。",
+      "openFolder": "打开文件夹",
+      "copyPath": "复制路径",
+      "copied": "已复制",
+      "measuring": "正在计算…",
+      "unavailable": "无法读取索引大小。"
+    },
     "howTo": "如何使用 Kensaku",
     "howToIntro": "几个简单技巧让搜索更快：",
     "tipLabels": {
