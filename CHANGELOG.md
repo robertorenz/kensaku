@@ -3,6 +3,14 @@
 All notable changes to Kensaku. Format: [Keep a Changelog](https://keepachangelog.com/en/1.1.0/);
 versioning: [SemVer](https://semver.org/).
 
+## [Unreleased]
+
+### Added
+- **Index size and location in Settings → About.** A new "Index on disk" card
+  shows the index size in megabytes (search index plus metadata database,
+  with the split underneath) and the index folder path, with Copy path and
+  Open folder buttons. Backed by a new `get_index_info` command.
+
 ## [1.0.17] — 2026-11-09
 
 ### Added
