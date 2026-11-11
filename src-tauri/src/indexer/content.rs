@@ -1320,6 +1320,12 @@ fn delimited_row_snippet<'a>(mut rows: impl Iterator<Item = &'a str>, query: &st
 /// Plain text is read directly; everything else only reads the extraction
 /// cache. See [`ContentIndex::get_snippet_fast`].
 pub fn snippet_for_path(path: &Path, query: &str) -> Option<String> {
+    // Snippets are computed for every visible result on every search. Reading
+    // a cloud-only placeholder downloads it, so a search for "invoice" would
+    // quietly pull matching OneDrive/iCloud files down. No snippet instead.
+    if crate::indexer::walker::is_cloud_placeholder_path(path) {
+        return None;
+    }
     if is_delimited_extension(path.extension().and_then(|ext| ext.to_str())) {
         let file = fs::File::open(path).ok()?;
         let truncated = file.metadata().ok()?.len() > SNIPPET_READ_LIMIT;

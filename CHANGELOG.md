@@ -11,6 +11,13 @@ versioning: [SemVer](https://semver.org/).
   with the split underneath) and the index folder path, with Copy path and
   Open folder buttons. Backed by a new `get_index_info` command.
 
+### Fixed
+- **Searching no longer downloads cloud-only files.** Result snippets, the
+  hover card's image size, the text quick-look and the file preview read
+  OneDrive Files On-Demand / iCloud placeholders, which made Windows hydrate
+  them ("kensaku is downloading from …"). They now skip online-only files;
+  opening a file still downloads it as expected.
+
 ## [1.0.17] — 2026-11-09
 
 ### Added

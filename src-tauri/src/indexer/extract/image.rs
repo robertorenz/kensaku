@@ -742,7 +742,14 @@ fn tesseract_ocr(path: &Path) -> crate::ocr::OcrOutcome {
 ///
 /// Returns `None` for unreadable/corrupt images and for images above the
 /// [`MAX_IMAGE_PIXELS`] budget.
+///
+/// Also `None` for cloud-only placeholders (OneDrive Files On-Demand, iCloud
+/// dataless files): reading even the header hydrates the whole file, so a
+/// hover card or details pane would otherwise download it from the cloud.
 pub fn dimensions(path: &Path) -> Option<(u32, u32)> {
+    if crate::indexer::walker::is_cloud_placeholder_path(path) {
+        return None;
+    }
     let (width, height) = image::image_dimensions(path).ok()?;
     if width == 0 || height == 0 {
         return None;

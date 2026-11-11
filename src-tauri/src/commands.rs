@@ -685,7 +685,13 @@ fn build_file_preview(path: &str) -> Result<FilePreview, String> {
     let is_dir = meta.is_dir();
 
     if is_dir {
-        let child_count = std::fs::read_dir(p).map(|rd| rd.count()).unwrap_or(0);
+        // Listing a cloud folder whose contents are not on disk asks the
+        // provider to fetch the listing; report no count instead.
+        let child_count = if crate::indexer::walker::is_unpopulated_cloud_dir(&meta) {
+            0
+        } else {
+            std::fs::read_dir(p).map(|rd| rd.count()).unwrap_or(0)
+        };
         return Ok(FilePreview {
             path: path.to_string(),
             filename,
@@ -713,6 +719,26 @@ fn build_file_preview(path: &str) -> Result<FilePreview, String> {
     // never reach tesseract on preview.
     let is_image = crate::indexer::extract::image::is_supported_image_extension(&ext)
         || matches!(ext.as_str(), "svg" | "ico");
+
+    // A cloud-only placeholder (OneDrive Files On-Demand, iCloud) is
+    // downloaded by any read, so a preview shows metadata only. The `stat`
+    // above never hydrates.
+    if crate::indexer::walker::is_cloud_placeholder(&meta) {
+        return Ok(FilePreview {
+            path: path.to_string(),
+            filename,
+            file_size,
+            modified,
+            is_dir: false,
+            preview_type: if is_image { "image" } else { "binary" }.to_string(),
+            content: None,
+            total_lines: None,
+            child_count: None,
+            width: None,
+            height: None,
+        });
+    }
+
     if is_image {
         let dimensions = crate::indexer::extract::image::dimensions(p);
         return Ok(FilePreview {
@@ -1094,6 +1120,10 @@ pub async fn execute_command(
 #[tauri::command]
 pub async fn read_file_content(path: String) -> Result<String, String> {
     let p = Path::new(&path);
+    // Quick-look must not download a cloud-only file; opening it does that.
+    if crate::indexer::walker::is_cloud_placeholder_path(p) {
+        return Err("This file is only in the cloud. Open it to download it.".to_string());
+    }
     crate::indexer::content::read_text_content(p, 256_000)
         .ok_or_else(|| "Could not read text content from file".to_string())
 }
